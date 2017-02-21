@@ -1,38 +1,15 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
+import Villain from '../models/villain';
 
 
 @Component({
-  selector: 'villains',
+  selector: 'villains-list',
   templateUrl: './villains-list.component.html',
   styleUrls: ['./villains-list.component.scss']
 })
-export class VillainsListComponent implements OnInit {
+export class VillainsListComponent {
   
-  villains = [
-    {
-      id: 1,
-      name: 'Harambe'
-    },
-    {
-      id: 2,
-      name: 'Darth Vader'
-    },
-    {
-      id: 3,
-      name: 'Dead Pool'
-    },
-    {
-      id: 4,
-      name: 'Lawyers'
-    }
-  ];
-  
-  
-  constructor() {
-    
-  }
-  
-  ngOnInit() {
-  }
+  @Input() villains: Villain[];
+     
   
 }

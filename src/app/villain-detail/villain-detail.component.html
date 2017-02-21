@@ -1,1 +1,17 @@
 <h1>{{ villain.name }}</h1>
+
+<form (submit)="formSubmitted(villain)">
+  <fieldset>
+    <label for="name">Villain's Name</label>
+    <input [(ngModel)]="villain.name" name="name" id="name"/>
+  </fieldset>
+  
+  <fieldset>
+    <label for="power">Power</label>
+    <input type="number" [(ngModel)]="villain.power" name="power" id="power" min="0" max="100"/>
+  </fieldset>
+  
+  <button type="reset">Cancel</button>
+  <button type="submit">Save</button>
+  
+</form>

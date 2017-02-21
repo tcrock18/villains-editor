@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Villain from "../models/villain";
 
 @Component({
   selector: 'villain-detail',
@@ -7,15 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VillainDetailComponent implements OnInit {
   
-  villain = {
+  villain: Villain = {
     id: 1,
-    name: 'Harambe'
+    name: 'Harambe',
+    power: 5
   };
   
   constructor() {
   }
 
   ngOnInit() {
+  }
+  
+  savedClicked() {
+    console.log(this.villain);
+  }
+  
+  cancelClicked() {
+    console.log('Cancel');
+  }
+  
+  formSubmitted(villain) {
+    //this.villain
+    console.log(villain);
+    // console.log(this.villain);
   }
 
 }
